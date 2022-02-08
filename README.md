@@ -1,11 +1,9 @@
 # Overview
 This repository contains all information, resources, and examples for the Aleo bounties at EthDenver 2022 hackathon.
 
-## Bounty 1 (Title, Description, Prize Amount, and Resource Links)
+## Bounty 1 - Aleo Wallet Generation
 
-Title: Aleo Wallet Generation
-
-Description:
+### Description:
 
 We encourage you to create an open-source Aleo address generator leveraging the Aleo SDK. It should be able to generate a new Aleo private key and derive the corresponding Aleo view key and Aleo address. 
 
@@ -27,11 +25,9 @@ Are there any requirements that a BUIDLER will need to complete the bounty?
 
 [https://aleohq.github.io/aleo/](https://aleohq.github.io/aleo/)
 
-## Bounty 2 (Title, Description, Prize Amount, and Resource Links)
+## Bounty 2 - Analytics Tools for Aleo Nodes 
 
-Title: Analytics Tools for Aleo Nodes 
-
-Description: 
+### Description: 
 
 We encourage you to build an open-source tool that helps analyze data relating to the Aleo blockchain. This can include network data, blockchain data, and/or account data. This bounty is open-ended and we’re looking for creative solutions. 
 
