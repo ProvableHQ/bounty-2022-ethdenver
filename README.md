@@ -46,6 +46,8 @@ Aleo SDK for information
 
 [https://github.com/aleohq/aleo](https://github.com/aleohq/aleo)
 
-[Postman Collection](https://github.com/AleoHQ/bounty-2022-ethdenver/blob/main/testnet2-rpc-endpoints.postman_collection.json)
+Postman Collection
 
+You can import the current SnarkOS rpc endpoints into [Postman](https://www.postman.com/) with this file:
+https://github.com/AleoHQ/bounty-2022-ethdenver/blob/main/testnet2-rpc-endpoints.postman_collection.json
 
