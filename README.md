@@ -46,6 +46,6 @@ Aleo SDK for information
 
 [https://github.com/aleohq/aleo](https://github.com/aleohq/aleo)
 
-Postman Collection
+[Postman Collection](https://github.com/AleoHQ/bounty-2022-ethdenver/blob/main/testnet2-rpc-endpoints.postman_collection.json)
 
 
