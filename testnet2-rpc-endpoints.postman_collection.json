@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "8e89e237-5e16-4bc1-bd2f-269f95453d5c",
+		"name": "testnet2-rpc-endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "latestblock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestblock\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestblockheight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has non-zero block count\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result).to.greaterThan(1);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"latestblockheight\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestcumulativeweight",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestcumulativeweight\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestblockhash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestblockhash\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestblockheader",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestblockheader\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestblocktransactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestblocktransactions\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "latestledgerroot",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"latestledgerroot\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getblock\",\n\t\"params\": [\n        60\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblocks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getblocks\",\n\t\"params\": [0, 1]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblockheight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has non-zero block count\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result).to.greaterThan(1);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getblockheight\",\n    \"params\": [\n        \"ab18946qsq2ppqylhk03ftpg7wjuknp4gwpqz0hhp8hl2ahn94sg5zqxd8qw8\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblockhash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getblockhash\",\n    \"params\": [18000]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblockhashes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getblockhashes\",\n\t\"params\": [0, 1]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblockheader",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getblockheader\",\n    \"params\": [\n        0\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblocktemplate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getblocktemplate\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getblocktransactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getblocktransactions\",\n    \"params\": [\n        0\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getciphertext",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getciphertext\",\n    \"params\": [\n       \"cm1xck4eyf3a3qnz69yyrr3jf698mqzwpjgkqu0j359p0sdr5wyjyqsn0604p\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getledgerproof",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getledgerproof\",\n    \"params\": [\n       \"cm1xck4eyf3a3qnz69yyrr3jf698mqzwpjgkqu0j359p0sdr5wyjyqsn0604p\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getmemorypool",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getmemorypool\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettransaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"gettransaction\",\n    \"params\": [\n       \"at1ky80ktk2tcyytgg3dvg3jqtu64kc6nzdrwg75nv0c6u78grkh5qqdu804w\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettransition",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"gettransition\",\n    \"params\": [\n       \"as1xuppwj4x7eswxppdlg3pt49vue2kwfw3cw8m8k3uqxe5e7945g9s4s8lz5\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getconnectedpeers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"id\": \"1\",\n\t\"method\": \"getconnectedpeers\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getnodestate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has non-zero block count\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.result).to.greaterThan(1);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"getnodestate\"\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendtransaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"id\": \"1\",\n    \"method\": \"sendtransaction\",\n    \"params\": [\n        \"8e20bb6d749540012794eecf23287736df7007e4161022733948bd38a8dfade919d4db332f220ba0561e9f7fcfed4d01d09c5a2c72372c3a4b07e7590ffe027ce5bc438c77949c11c4b17837f754c00401008b346b7fa884c91c1e442eaf7b36b9b77d484759f10830d90d764a6b9cd1e811486af22979d0ebf69bc7f769794a9df068e4b942872a75974e5caa341181210f1b63a1ed24f48686d6c3666057f2044f0d6d2e203d3c92a75097e9db114cd80d726d91fd08761c34bd588f9d6ac25f5cd16e1ae96c327b71aaeabf175d00970db6b6d1493d16ad74a0857e8baf9370df3f048a50a3a23bab4ae99513c216e00ec2613377a969d902e4dfd04bd54e9d3050686e8ad38518bf675ddb39abcbaa0f7dcf4c5516d6182e861242a1830733299d101b9faf3622eb6b5985c7c66c7301f44fc831964b474ef4925535dc729f18e90afb6b8260c5fcd34d42a73650d010a4505b4e62c5ed95a816e33f7258dd19a6a2ebc194d11bc97a57bb3ef9dbe9018b9540bd4fc7a876debba37497a4ae409f4d5ed78b1d682982091387934ac20277448a1e4a6690f47de2f66d9a42103bec5ebdc209cd69fba23da211cc402e0cc66a79bbc1e16edb2a4e2b8a703dab48626c92c1e58aca0ab9062b1228bc6a00a8394df171203bfda7fd568a2d648183149e6728f6c388692198b20a0b13ab1144e388a5757cbd9bc78e08993fe6c0ea4592a0c60bdf4757af4e90f7bcccc610334fc428b937489d317a941132aed5ace4a0b26c80402736462847c6a19cb804c6f345ef8d43889cdec61863439645e44630ab74257618d3b924bdc6b62d8b04c47a0d44a9bd8af7989457ecd3145b7bd1bdeb0c64320c621c894159cb6f410344d908fd8057b68299163332772201b25d28a56d4f3fd413fceeccb8388e7310f0ce198ca48aa0095c07f37ae6484e5ceab481698f944cfb7fa81ade28a1e2101997b11d40249fb419d84ab774da66646e415070b7a095cde1b30da3ff6c1a0ca78d3f87185affba5ef467e83122522e4d82bf8aedd56cb2447d52cb9c02601100000000000000000000a92bcde554b6c1130e1eff8fa8ee1df3920080a8998f7b5b9c12c56c4ced5e88d021fb7d0ee04565c6bad25e56b805761a0eea8354e61d1168e28a2d58dc28f7dbd22dc860fca34d7885f1d0cf3e74628959119017a6000f801f70e1f2e2a380717a36ab5daa544c05256d8e1cdd8bd0c432f01316a0294e0389a7419075016d1f53baf0ebf6e3a9067d986d2038479feecf455714dc715cbdb32ee8d2a90f843d6701851638bd62b9ba420f87f1bbce4c2948c36a960cd0ea1965bbb8089480c865e9724e9b33336a7152eef04971908c6236412868311ef7cc65e03f22a1e5a20b2dbfb16ae8c011a0823480065a06051e14a96d9cb9a9014fee104dfacf343d75ee256e6bd85f0f1c859b12226848662860a402db7c1d4e6a3b2bd311698001\"\n]\n}"
+				},
+				"url": {
+					"raw": "{{rpc_address}}",
+					"host": [
+						"{{rpc_address}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
