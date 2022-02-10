@@ -1,5 +1,5 @@
 # Overview
-This repository contains all information, resources, and examples for the Aleo bounties at EthDenver 2022 hackathon.
+This repository contains information, resources, and examples for the Aleo bounties at EthDenver 2022 hackathon.
 
 ## Bounty 1 - Aleo Wallet Generation
 
@@ -38,16 +38,22 @@ An example of such a tool would be an account indexer that scans the Aleo blockc
 $7,500 (Virtual) | 1st place - $5,000 | 2nd place - $2,500
 
 ### Resource Links
-Check out the provided RPC Docs (Will be included in Aleo SDK)
+Check out the provided snarkOS RPC Docs
 
 [https://github.com/AleoHQ/snarkOS/tree/testnet2/src/rpc/documentation/public_endpoints](https://github.com/AleoHQ/snarkOS/tree/testnet2/src/rpc/documentation/public_endpoints)
 
-Aleo SDK for information
-
-[https://github.com/aleohq/aleo](https://github.com/aleohq/aleo)
-
 Postman Collection
 
-You can import the current SnarkOS rpc endpoints into [Postman](https://www.postman.com/) with this file:
+You can import the current SnarkOS rpc endpoints into [Postman](https://www.postman.com/) with this file
 https://github.com/AleoHQ/bounty-2022-ethdenver/blob/main/testnet2-rpc-endpoints.postman_collection.json
+
+Sync Nodes
+
+A list of Aleo-owned sync node ip addresses can be found here https://github.com/AleoHQ/snarkOS/blob/667aa476d9bb0e18a78f23e6efe2c953ed93c906/src/environment/mod.rs#L188
+
+Aleo Explorer
+
+Browse the current test network
+
+https://www.aleo.network/
 
