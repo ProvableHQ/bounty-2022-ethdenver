@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "target": "es5",
+    "outDir": "dist"
+  },
+  "include": [
+    "index.ts"
+  ]
+}
