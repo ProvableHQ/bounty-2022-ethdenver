@@ -14,7 +14,16 @@ A vanity address generation tool would be a nice feature to make your work stand
 ### Prize Amount 
 $7,500 (In-Person)  1st place - $5,000 | 2nd place - $2,500 
 
-### Resource Links
+### Resources:
+
+**Recommended NodeJS version >14**
+
+Install and run the Aleo SDK boilerplate code in this repository
+
+```bash
+yarn install
+yarn start
+```
 
 Check out the provided Aleo SDK for information
 
@@ -37,7 +46,7 @@ An example of such a tool would be an account indexer that scans the Aleo blockc
 ### Prize Amount
 $7,500 (Virtual) | 1st place - $5,000 | 2nd place - $2,500
 
-### Resource Links
+### Resources
 Check out the provided snarkOS RPC Docs
 
 [https://github.com/AleoHQ/snarkOS/tree/testnet2/src/rpc/documentation/public_endpoints](https://github.com/AleoHQ/snarkOS/tree/testnet2/src/rpc/documentation/public_endpoints)
